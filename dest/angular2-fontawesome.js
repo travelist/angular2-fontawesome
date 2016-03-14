@@ -1,0 +1,1 @@
+//# sourceMappingURL=angular2-fontawesome.js.map
