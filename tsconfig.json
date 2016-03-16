@@ -11,6 +11,7 @@
     "declaration": true
   },
   "files": [
+    "node_modules/angular2/typings/browser.d.ts",
     "angular2-fontawesome.ts",
     "src/fa.component.ts",
     "src/fa-stack.component.ts"
