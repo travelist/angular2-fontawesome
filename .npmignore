@@ -1,0 +1,10 @@
+# Node generated files
+node_modules
+*.log
+
+# OS generated files
+.DS_Store
+
+# Ignored files
+*.ts
+!*.d.ts

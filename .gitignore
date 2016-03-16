@@ -1,6 +1,9 @@
 .idea
+.DS_Store
 node_modules/
 *.swp
 *.map
 *.log
 *.js
+*.d.ts
+typings/

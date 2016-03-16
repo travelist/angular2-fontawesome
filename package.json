@@ -15,9 +15,10 @@
     "angular2": ">=2.0.0-beta.9"
   },
   "scripts": {
-    "tsc": "tsc --sourceRoot src --outDir dest",
+    "prepublish": "tsc",
     "typings": "typings"
   },
+  "typings": "./angular2-fontawesome.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/travelist/angular2-fontawesome.git"
