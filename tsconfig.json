@@ -2,19 +2,19 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
+    "removeComments": true,
     "noImplicitAny": false,
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node"
   },
   "files": [
     "node_modules/angular2/typings/browser.d.ts",
-    "angular2-fontawesome.ts",
-    "src/fa.component.ts",
-    "src/fa-stack.component.ts"
+    "components.ts",
+    "lib/fa.component.ts",
+    "lib/fa-stack.component.ts"
   ],
   "exclude": [
     "node_modules"

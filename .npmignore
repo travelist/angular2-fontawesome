@@ -1,10 +1,24 @@
-# Node generated files
-node_modules
-*.log
+# Node
+node_modules/*
+npm-debug.log
 
-# OS generated files
+# DO NOT IGNORE TYPESCRIPT FILES FOR NPM
+# TypeScript
+# *.js
+# *.map
+# *.d.ts
+
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
 .DS_Store
-
-# Ignored files
-*.ts
-!*.d.ts
+**/.DS_Store

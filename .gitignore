@@ -1,9 +1,25 @@
-.idea
-.DS_Store
-node_modules/
 *.swp
-*.map
-*.log
-*.js
-*.d.ts
 typings/
+
+# Node
+node_modules/*
+npm-debug.log
+
+# TypeScript
+*.js
+*.map
+*.d.ts
+
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
