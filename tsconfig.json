@@ -8,13 +8,14 @@
     "removeComments": true,
     "noImplicitAny": false,
     "declaration": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "rootDir": "lib"
   },
   "files": [
     "node_modules/angular2/typings/browser.d.ts",
-    "components.ts",
-    "lib/fa.component.ts",
-    "lib/fa-stack.component.ts"
+    "lib/components.ts",
+    "lib/components/fa-stack.component.ts",
+    "lib/components/fa.component.ts"
   ],
   "exclude": [
     "node_modules"

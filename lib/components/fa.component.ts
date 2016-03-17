@@ -1,4 +1,3 @@
-'use strict';
 import {Component, ElementRef, Input, SimpleChange} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 

@@ -28,7 +28,7 @@ System.config({
     },
     map: {
       // add this line (2)
-      'angular2-fontawesome': 'node_modules/angular2-fontawesome'
+      'angular2-fontawesome': 'node_modules/angular2-fontawesome/lib'
     }
 });
 
