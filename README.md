@@ -1,8 +1,9 @@
 # Angular2 Fontawesome (Beta)
 Angular2 components for Fontawesome
 
-Note: *Do Not Use in Production*. This implementation would be modified in the future.
-This is because Angular2 is currently beta release, and it seems to be batter to wait for some features (like [this ](https://github.com/angular/angular/issues/6710)) and best practices.
+Note: *Do Not Use in Production*.
+Some behaviors would be modified in the future release.
+This is because Angular2 is currently beta release, and it seems to be batter to wait for some features (like [this](https://github.com/angular/angular/issues/6710)) and best practices.
 
 ## Installation
 
@@ -76,6 +77,12 @@ export class AppComponent {}
 <fa [name]="'rocket'"></fa>
 <!-- rendered -->
 <fa>
+  <i class="fa fa-rocket"></i>
+</fa>
+<!-- or simply, -->
+<fa name="rocket"></fa>
+<!-- rendered -->
+<fa name="rocker">
   <i class="fa fa-rocket"></i>
 </fa>
 ```
