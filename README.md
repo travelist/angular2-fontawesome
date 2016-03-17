@@ -1,4 +1,4 @@
-# Angular2 Fontawesome (Beta)
+# Angular2 Fontawesome (Beta) [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg)](https://circleci.com/gh/travelist/angular2-fontawesome)
 Angular2 components for Fontawesome
 
 Note: *Do Not Use in Production*.

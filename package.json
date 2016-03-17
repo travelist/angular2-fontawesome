@@ -17,6 +17,7 @@
     "typescript": "^1.8.7"
   },
   "scripts": {
+    "test": "tslint ./lib/*.ts ./lib/**/*.ts",
     "prepublish": "tsc",
     "typings": "typings"
   },
