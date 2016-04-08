@@ -46,7 +46,7 @@ System.import('app/main').then(null, console.error.bind(console));
 2. In the decorators, use `directives`  (Angular2 Quickstart for example):
 
 ```javascript
-import {FaComponent} from 'angular2-fontawesome';
+import {FaComponent} from 'angular2-fontawesome/components';
 
 @Component({
   selector: 'my-app',
