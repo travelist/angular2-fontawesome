@@ -11,13 +11,9 @@
     "moduleResolution": "node",
     "rootDir": "lib"
   },
-  "files": [
-    "node_modules/angular2/typings/browser.d.ts",
-    "lib/components.ts",
-    "lib/components/fa-stack.component.ts",
-    "lib/components/fa.component.ts"
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
   ]
 }

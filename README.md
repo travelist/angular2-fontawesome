@@ -10,7 +10,7 @@ This is because Angular2 is currently beta release, and it seems to be batter to
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": ">=0.1.0"
+"angular2-fontawesome": ">=0.2.0"
 ```
 
 We can import this library with SystemJS:
