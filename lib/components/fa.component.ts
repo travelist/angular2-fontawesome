@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, SimpleChange} from 'angular2/core';
-import {NgClass} from 'angular2/common';
+import {Component, ElementRef, Input, SimpleChange} from '@angular/core';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'fa',
