@@ -37,7 +37,7 @@ var packages = {
 
 ```
 
-*Note: This might be modified to eliminate above configuration lines, and can be used by just `import .. from ..` statement in each module.*
+*Note: The directory structure, `angular2-fontawesome/lib`, is under consideration. Please feel free to propose better practice one via the github issues.*
 
 ## Usage
 
