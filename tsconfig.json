@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -11,6 +11,11 @@
     "moduleResolution": "node",
     "rootDir": "lib"
   },
+  "files": [
+    "lib/components.ts",
+    "lib/components/fa-stack.component.ts",
+    "lib/components/fa.component.ts"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",
