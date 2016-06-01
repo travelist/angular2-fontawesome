@@ -10,30 +10,30 @@ This is because Angular2 is currently beta release, and it seems to be batter to
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": ">=0.2.0"
+"angular2-fontawesome": ">=0.3.0"
 ```
 
-We can import this library with SystemJS:
+We can import this library with SystemJS (`systemjs.config.js`):
 ```javascript
 // This example is following to Angular2 Quick Start Documentation
 // Reference: https://angular.io/docs/ts/latest/quickstart.html
 
-System.config({
-    packages: {
-        app: {
-            format: 'register',
-            defaultExtension: 'js'
-        },
-        // add this line (1)
-        "angular2-fontawesome": {"defaultExtension": 'js'}
-    },
-    map: {
-      // add this line (2)
-      'angular2-fontawesome': 'node_modules/angular2-fontawesome/lib'
-    }
-});
+var map = {
+  'app':                        'app',
+  '@angular':                   'node_modules/@angular',
+  'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+  'rxjs':                       'node_modules/rxjs'
+  // Add this line (1)
+  'angular2-fontawesome':       'node_modules/angular2-fontawesome/lib',
+};
 
-System.import('app/main').then(null, console.error.bind(console));
+var packages = {
+  'app':                        { main: 'main.js',  defaultExtension: 'js' },
+  'rxjs':                       { defaultExtension: 'js' },
+  'angular2-in-memory-web-api': { defaultExtension: 'js' },
+  // Add this line (2)
+  'angular2-fontawesome':       { defaultExtension: 'js' },
+};
 
 ```
 
@@ -43,10 +43,10 @@ System.import('app/main').then(null, console.error.bind(console));
 
 1. Add [Fontawesome]((http://fortawesome.github.io/Font-Awesome/get-started/)) to your application.
 
-2. In the decorators, use `directives`  (Angular2 Quickstart for example):
+2. In the decorators, use `directives`  (Angular2 QuickStart for example):
 
 ```javascript
-import {FaComponent} from 'angular2-fontawesome/components';
+import { FaComponent } from 'angular2-fontawesome/components';
 
 @Component({
   selector: 'my-app',
