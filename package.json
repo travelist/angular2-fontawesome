@@ -16,7 +16,7 @@
     "watch": "tsc -p src -w",
     "build": "rm -rf lib && tsc -p src",
     "test": "tslint ./src/*.ts ./src/**/*.ts",
-    "prepublish": "tsc",
+    "prepublish": "tsc -p src",
     "typings": "typings"
   },
   "typings": "./lib/components.d.ts",
