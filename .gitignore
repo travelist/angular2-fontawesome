@@ -2,11 +2,14 @@
 typings/
 
 # Node
-node_modules/*
+node_modules
 npm-debug.log
 
+jspm_packages
+lib
+build
+
 # TypeScript
-*.js
 *.map
 *.d.ts
 

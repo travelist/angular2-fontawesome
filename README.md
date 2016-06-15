@@ -10,7 +10,7 @@ This is because Angular2 is currently beta release, and it seems to be batter to
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": ">=0.3.0"
+"angular2-fontawesome": "^0.4.0"
 ```
 
 We can import this library with SystemJS (`systemjs.config.js`):
@@ -24,7 +24,7 @@ var map = {
   'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
   'rxjs':                       'node_modules/rxjs'
   // Add this line (1)
-  'angular2-fontawesome':       'node_modules/angular2-fontawesome/lib',
+  'angular2-fontawesome':       'node_modules/angular2-fontawesome',
 };
 
 var packages = {
@@ -37,7 +37,8 @@ var packages = {
 
 ```
 
-*Note: The directory structure, `angular2-fontawesome/lib`, is under consideration. Please feel free to propose better practice one via the github issues.*
+*TODO* Need to write webpack installation doc.
+
 
 ## Usage
 
@@ -55,6 +56,10 @@ import { FaComponent } from 'angular2-fontawesome/components';
 })
 export class AppComponent {}
 ```
+
+
+*Note* **FaDirective** and **FaStackDirective** will be supported
+
 
 ## Parameters
 
@@ -171,8 +176,10 @@ export class AppComponent {}
 
 - Remove `<fa>` from rendered results
   - Depends on [this issue](https://github.com/angular/angular/issues/6710)
+  - May be not possible? then keep current components and make **Directives**
 - Support for `fa-stack`
 - Support for `fa-li` and `fa-ul`
+- **FaDirective**, **FaStackDirective**
 - Test codes
   - After the Angular2 guideline for test code is published
 

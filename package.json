@@ -1,7 +1,7 @@
 {
   "name": "angular2-fontawesome",
-  "version": "0.3.0",
-  "description": "Angular 2 Component for Fontawesome",
+  "version": "0.4.0",
+  "description": "Angular 2 Component/Directive for Fontawesome",
   "homepage": "https://github.com/travelist/angular2-fontawesome",
   "author": "Komei Shimamura <komei.t.f@gmail.com>",
   "license": "MIT",
@@ -11,22 +11,11 @@
     "fontawesome",
     "typescript"
   ],
-  "main": "./lib/components.js",
-  "dependencies": {
-    "@angular/common": "2.0.0-rc.1",
-    "@angular/compiler": "2.0.0-rc.1",
-    "@angular/core": "2.0.0-rc.1",
-    "@angular/platform-browser": "2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.35.0",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12",
-    "typescript": "1.8.10"
-  },
+  "main": "angular2-fontawesome.js",
   "scripts": {
-    "test": "tslint ./lib/*.ts ./lib/**/*.ts",
+    "watch": "tsc -p src -w",
+    "build": "rm -rf lib && tsc -p src",
+    "test": "tslint ./src/*.ts ./src/**/*.ts",
     "prepublish": "tsc",
     "typings": "typings"
   },
@@ -35,9 +24,17 @@
     "type": "git",
     "url": "git://github.com/travelist/angular2-fontawesome.git"
   },
+  "bugs": {
+    "url": "https://github.com/travelist/angular2-fontawesome/issues"
+  },
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "font-awesome": "^4.6.1",
+    "rxjs": "5.0.0-beta.0"
+  },
   "devDependencies": {
-    "tslint": ">=3.5.0",
-    "typings": ">=0.6.8"
+    "typescript": "^1.8.10"
   }
 }
 
