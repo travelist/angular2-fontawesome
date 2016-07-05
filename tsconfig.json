@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "./lib",
+    "declaration": true
+  },
+  "compileOnSave": true,
+  "filesGlob": [
+    "components.d.ts",
+    "directives.d.ts"
+  ],
+  "files": [
+    "./src/components/fa.component.ts",
+    "./src/components/fa-stack.component.ts",
+    "./src/directives/fa.directive.ts",
+    "./typings/browser.d.ts"
+  ]
+}

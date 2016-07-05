@@ -13,10 +13,10 @@
   ],
   "main": "angular2-fontawesome.js",
   "scripts": {
-    "watch": "tsc -p src -w",
-    "build": "rm -rf lib && tsc -p src",
+    "watch": "tsc -w",
+    "build": "rm -rf lib && tsc",
     "test": "tslint ./src/*.ts ./src/**/*.ts",
-    "prepublish": "tsc -p src",
+    "prepublish": "tsc",
     "typings": "typings"
   },
   "typings": "./lib/components.d.ts",
