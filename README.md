@@ -1,16 +1,13 @@
 # Angular2 Fontawesome (Beta) [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
 Angular2 components for Fontawesome
 
-Note: *Do Not Use in Production*.
-Some behaviors would be modified in the future release.
-This is because Angular2 is currently beta release, and it seems to be batter to wait for some features (like [this](https://github.com/angular/angular/issues/6710)) and best practices.
 
 ## Installation
 
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": "^0.4.0"
+"angular2-fontawesome": "^0.5.0"
 ```
 
 We can import this library with SystemJS (`systemjs.config.js`):
@@ -57,13 +54,25 @@ import { FaComponent } from 'angular2-fontawesome/components';
 export class AppComponent {}
 ```
 
+We can also use `FaDirective` if we want.
 
-*Note* **FaDirective** and **FaStackDirective** will be supported
+```javascript
+import { FaDirective } from 'angular2-fontawesome/directives';
 
+@Component({
+  selector: 'my-app',
+  template: '<i [name]="\'rocket\'" [border]=true></i>',
+  directives: [FaDirective],
+})
+export class AppComponent {}
+```
+
+*Note* **FaStackDirective** is going to be supported
 
 ## Parameters
 
 ```html
+<!-- Component -->
 <fa [name]=string      // name of fontawesome icon
     [size]=number      // [1-5]
     [flip]=string      // [horizontal|vertical]
@@ -74,6 +83,18 @@ export class AppComponent {}
     [fw]=boolean       // [true|false]
     [inverse]=boolean  // [true|false]
     ></fa>
+
+<!-- Directive -->
+<i fa [name]=string      // name of fontawesome icon
+      [size]=number      // [1-5]
+      [flip]=string      // [horizontal|vertical]
+      [pull]=string      // [right|left]
+      [rotate]=number    // [90|180|270]
+      [border]=boolean   // [true|false]
+      [spin]=boolean     // [true|false]
+      [fw]=boolean       // [true|false]
+      [inverse]=boolean  // [true|false]
+      ></fa>
 ```
 
 ### name
@@ -84,12 +105,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket"></i>
 </fa>
-<!-- or simply, -->
-<fa name="rocket"></fa>
+
+<i fa [name]="rocket"></fa>
 <!-- rendered -->
-<fa name="rocker">
-  <i class="fa fa-rocket"></i>
-</fa>
+<i fa class="fa fa-rocket"></i>
 ```
 
 ### size
@@ -100,6 +119,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-lg"></i>
 </fa>
+
+<i fa [name]="rocket" [size]=1></i>
+<!-- rendered -->
+<i fa class="fa fa-rocket fa-lg"></i>
 ```
 
 ### flip
@@ -110,6 +133,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-flip-horizontal"></i>
 </fa>
+
+<i fa [name]="rocket" [flip]="'horizontal'"></i>
+<!-- rendered -->
+<i fa class="fa fa-rocket fa-flip-horizontal"></i>
 ```
 
 ### pull
@@ -120,6 +147,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-pull-right"></i>
 </fa>
+
+<i fa [name]="rocket" [pull]="'right'"></i>
+<!-- rendered -->
+<i class="fa fa-rocket fa-pull-right"></i>
 ```
 
 ### rotate
@@ -130,6 +161,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-rotate-90"></i>
 </fa>
+
+<i fa [name]="'rocket'" [rotate]=90></i>
+<!-- rendered -->
+<i class="fa fa-rocket fa-rotate-90"></i>
 ```
 
 ### border
@@ -140,6 +175,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-border"></i>
 </fa>
+
+<i fa [name]="'rocket'" [border]=true></i>
+<!-- rendered -->
+<i fa class="fa fa-rocket fa-border"></i>
 ```
 
 ### spin
@@ -150,6 +189,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-span"></i>
 </fa>
+
+<i fa [name]="'rocket'" [span]=true></i>
+<!-- rendered -->
+<i class="fa fa-rocket fa-span"></i>
 ```
 
 ### fw
@@ -160,6 +203,10 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-fw"></i>
 </fa>
+
+<i fa [name]="'rocket'" [fw]=true></i>
+<!-- rendered -->
+<i class="fa fa-rocket fa-fw"></i>
 ```
 
 ### inverse
@@ -170,17 +217,18 @@ export class AppComponent {}
 <fa>
   <i class="fa fa-rocket fa-inverse"></i>
 </fa>
+
+<i fa [name]="'rocket'" [inverse]=true></i>
+<!-- rendered -->
+<i class="fa fa-rocket fa-inverse"></i>
 ```
 
 ## TODO
 
-- Remove `<fa>` from rendered results
-  - Depends on [this issue](https://github.com/angular/angular/issues/6710)
-  - May be not possible? then keep current components and make **Directives**
-- Support for `fa-stack`
-- Support for `fa-li` and `fa-ul`
-- **FaDirective**, **FaStackDirective**
-- Test codes
+- [ ] Support for `fa-stack`
+- [ ] Support for `fa-li` and `fa-ul`
+- [ ] **FaStackDirective**
+- [ ] Test codes
   - After the Angular2 guideline for test code is published
 
 ## License

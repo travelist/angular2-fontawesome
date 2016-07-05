@@ -4,6 +4,7 @@ import {NgClass} from '@angular/common';
 @Component({
   selector: 'fa',
   template: '<i [ngClass]="classList"></i>'
+
 })
 export class FaComponent {
   static sizeValidator:   RegExp = /[1-5]/;
@@ -125,7 +126,7 @@ export class FaComponent {
   }
 
   private addFaClass(className:string):void {
-    // better to check the uniquness
+    // better to check uniqueness
     this.classList.push(className);
   }
 
