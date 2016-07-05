@@ -19,6 +19,6 @@
     "./src/components/fa.component.ts",
     "./src/components/fa-stack.component.ts",
     "./src/directives/fa.directive.ts",
-    "./typings/browser.d.ts"
+    "./typings/index.d.ts"
   ]
 }
