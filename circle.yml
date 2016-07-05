@@ -4,4 +4,5 @@ machine:
 
 dependencies:
   pre:
+    - npm install typings --global
     - typings install
