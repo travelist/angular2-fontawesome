@@ -30,14 +30,13 @@ export class FaDirective {
     }
 
     ngOnChanges(changes:{[propertyName: string]: SimpleChange}) {
-        console.log(changes)
         for (var key in changes) {
             var previousValue = changes[key].previousValue;
             var currentValue = changes[key].currentValue;
 
             switch (key) {
                 case 'name':
-                    if (typeof previousValue == "string") {
+                    if (typeof previousValue === 'string') {
                         this.el.classList.remove(`fa-${previousValue}`);
                     }
                     this.el.classList.add(`fa-${currentValue}`);
@@ -49,12 +48,12 @@ export class FaDirective {
 
                 case 'size':
                     if (FaDirective.sizeValidator.test(currentValue)) {
-                        if (previousValue == 1) {
+                        if (previousValue === 1) {
                             this.el.classList.remove('fa-lg');
-                        } else if (typeof previousValue == "string") {
+                        } else if (typeof previousValue === 'string') {
                             this.el.classList.remove(`fa-${previousValue}x`);
                         }
-                        if (currentValue == 1) {
+                        if (currentValue === 1) {
                             this.el.classList.add('fa-lg');
                         } else {
                             this.el.classList.add(`fa-${currentValue}x`);
@@ -64,7 +63,7 @@ export class FaDirective {
 
                 case 'stack':
                     if (FaDirective.sizeValidator.test(currentValue)) {
-                        if (typeof previousValue == "string") {
+                        if (typeof previousValue === 'string') {
                             this.el.classList.remove(`fa-stack-${previousValue}x`);
                         }
                         this.el.classList.add(`fa-stack-${currentValue}x`);
@@ -73,7 +72,7 @@ export class FaDirective {
 
                 case 'flip':
                     if (FaDirective.flipValidator.test(currentValue)) {
-                        if (typeof previousValue == "string") {
+                        if (typeof previousValue === 'string') {
                             this.el.classList.remove(`fa-flip-${previousValue}`);
                         }
                         this.el.classList.add(`fa-flip-${currentValue}`);
@@ -82,7 +81,7 @@ export class FaDirective {
 
                 case 'pull':
                     if (FaDirective.pullValidator.test(currentValue)) {
-                        if (typeof previousValue == "string") {
+                        if (typeof previousValue === 'string') {
                             this.el.classList.remove(`fa-pull-${previousValue}`);
                         }
                         this.el.classList.add(`fa-pull-${currentValue}`);
@@ -91,7 +90,7 @@ export class FaDirective {
 
                 case 'rotate':
                     if (FaDirective.rotateValidator.test(currentValue)) {
-                        if (typeof previousValue == "string") {
+                        if (typeof previousValue === 'string') {
                             this.el.classList.remove(`fa-rotate-${previousValue}`);
                         }
                         this.el.classList.add(`fa-rotate-${currentValue}`);
@@ -101,7 +100,7 @@ export class FaDirective {
                 case 'border':
                     if (currentValue) {
                         this.el.classList.add('fa-border');
-                    } else if (typeof previousValue == "string") {
+                    } else if (typeof previousValue === 'string') {
                         this.el.classList.remove('fa-border');
                     }
                     break;
@@ -109,7 +108,7 @@ export class FaDirective {
                 case 'spin':
                     if (currentValue) {
                         this.el.classList.add('fa-spin');
-                    } else if (typeof previousValue == "string") {
+                    } else if (typeof previousValue === 'string') {
                         this.el.classList.remove('fa-spin');
                     }
                     break;
@@ -117,7 +116,7 @@ export class FaDirective {
                 case 'fw':
                     if (currentValue) {
                         this.el.classList.add('fa-fw');
-                    } else if (typeof previousValue == "string") {
+                    } else if (typeof previousValue === 'string') {
                         this.el.classList.remove('fa-fw');
                     }
                     break;
@@ -125,7 +124,7 @@ export class FaDirective {
                 case 'inverse':
                     if (currentValue) {
                         this.el.classList.add('fa-inverse');
-                    } else if (typeof previousValue == "string") {
+                    } else if (typeof previousValue === 'string') {
                         this.el.classList.remove('fa-inverse');
                     }
                     break;
