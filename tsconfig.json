@@ -16,10 +16,9 @@
     "directives.d.ts"
   ],
   "files": [
-    "components.d.ts",
-    "directives.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+    "./src/components/fa.component.ts",
+    "./src/components/fa-stack.component.ts",
+    "./src/directives/fa.directive.ts",
+    "./typings/index.d.ts"
+  ]
 }
