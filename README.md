@@ -10,7 +10,8 @@ In `package.json`, insert a following line in the `dependencies`:
 "angular2-fontawesome": "^0.5.0"
 ```
 
-We can import this library with SystemJS (`systemjs.config.js`):
+We can import this library using SystemJS (`systemjs.config.js`):
+
 ```javascript
 // This example is following to Angular2 Quick Start Documentation
 // Reference: https://angular.io/docs/ts/latest/quickstart.html
@@ -20,7 +21,7 @@ var map = {
   '@angular':                   'node_modules/@angular',
   'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
   'rxjs':                       'node_modules/rxjs'
-  // Add this line (1)
+  // Add this line (1/2)
   'angular2-fontawesome':       'node_modules/angular2-fontawesome',
 };
 
@@ -28,11 +29,49 @@ var packages = {
   'app':                        { main: 'main.js',  defaultExtension: 'js' },
   'rxjs':                       { defaultExtension: 'js' },
   'angular2-in-memory-web-api': { defaultExtension: 'js' },
-  // Add this line (2)
+  // Add this line (2/2)
   'angular2-fontawesome':       { defaultExtension: 'js' },
 };
 
 ```
+
+If our application is build using [angular-cli](https://github.com/angular/angular-cli), the configuration is something like following:
+
+```javascript
+// src/system-config.ts
+// Note: This is only needed when we use angular-cli
+
+const map: any = {
+  # Add this line (1/2)
+  'angular2-fontawesome': 'vendor/angular2-fontawesome'
+};
+
+/** User packages configuration. */
+const packages: any = {
+  # Add these lines (2/2)
+  'angular2-fontawesome':{
+    format: 'cjs',
+    defaultExtension: 'js'
+  }
+};
+```
+
+```javascript
+// angular-cli-build.js
+// Note: This is only needed when we use angular-cli
+ 
+var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
+
+module.exports = function(defaults) {
+  return new Angular2App(defaults, {
+    vendorNpmFiles: [
+      ...
+      'angular2-fontawesome/*.+(js|js.map)' # Add this line (1/1) 
+    ]
+```
+
+For more information with *angular-cli*, please refer to [wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs).
+
 
 *TODO* Need to write webpack installation doc.
 
@@ -48,7 +87,7 @@ import { FaComponent } from 'angular2-fontawesome/components';
 
 @Component({
   selector: 'my-app',
-  template: '<fa [name]="\'rocket\'" [border]=true></fa>',
+  template: '<fa [name]="rocket" [border]=true></fa>',
   directives: [FaComponent],
 })
 export class AppComponent {}
@@ -61,7 +100,7 @@ import { FaDirective } from 'angular2-fontawesome/directives';
 
 @Component({
   selector: 'my-app',
-  template: '<i [name]="\'rocket\'" [border]=true></i>',
+  template: '<i [name]="rocket" [border]=true></i>',
   directives: [FaDirective],
 })
 export class AppComponent {}
