@@ -100,7 +100,7 @@ import { FaDirective } from 'angular2-fontawesome/directives';
 
 @Component({
   selector: 'my-app',
-  template: '<i [name]="rocket" [border]=true></i>',
+  template: '<i fa [name]="rocket" [border]=true></i>',
   directives: [FaDirective],
 })
 export class AppComponent {}
