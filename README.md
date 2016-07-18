@@ -35,7 +35,7 @@ var packages = {
 
 ```
 
-If our application is build using [angular-cli](https://github.com/angular/angular-cli), the configuration is something like following:
+If our application is build with [**angular-cli**](https://github.com/angular/angular-cli), the configuration is something like following:
 
 ```javascript
 // src/system-config.ts
@@ -50,7 +50,6 @@ const map: any = {
 const packages: any = {
   # Add these lines (2/2)
   'angular2-fontawesome':{
-    format: 'cjs',
     defaultExtension: 'js'
   }
 };
@@ -66,12 +65,20 @@ module.exports = function(defaults) {
   return new Angular2App(defaults, {
     vendorNpmFiles: [
       ...
-      'angular2-fontawesome/*.+(js|js.map)' # Add this line (1/1) 
+      // Add following lines (1/2)
+      'angular2-fontawesome/*.+(js|js.map)', 
+      'angular2-fontawesome/**/*.+(js|js.map)',
+      'angular2-fontawesome/**/**/*.+(js|js.map)',
+
+      // You need to add following lines as well (2/2)
+      'font-awesome/css/*.*',
+      'font-awesome/fonts/*.*'
     ]
 ```
 
-For more information with *angular-cli*, please refer to [wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs).
+For more detail for working with angular-cli, [official wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs) would help. 
 
+*TODO* Modify directory structure to remove the lines in `angular-cli-build.js`.
 
 *TODO* Need to write webpack installation doc.
 
@@ -88,6 +95,8 @@ import { FaComponent } from 'angular2-fontawesome/components';
 @Component({
   selector: 'my-app',
   template: '<fa [name]="rocket" [border]=true></fa>',
+  // If this is based on angular-cli, replace node_module to vendor
+  styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
   directives: [FaComponent],
 })
 export class AppComponent {}
@@ -101,6 +110,8 @@ import { FaDirective } from 'angular2-fontawesome/directives';
 @Component({
   selector: 'my-app',
   template: '<i fa [name]="rocket" [border]=true></i>',
+  // If this is based on angular-cli, replace node_module to vendor
+  styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
   directives: [FaDirective],
 })
 export class AppComponent {}
