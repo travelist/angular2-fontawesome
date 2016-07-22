@@ -42,13 +42,13 @@ If our application is build with [**angular-cli**](https://github.com/angular/an
 // Note: This is only needed when we use angular-cli
 
 const map: any = {
-  # Add this line (1/2)
+  // Add this line (1/2)
   'angular2-fontawesome': 'vendor/angular2-fontawesome'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  # Add these lines (2/2)
+  // Add these lines (2/2)
   'angular2-fontawesome':{
     defaultExtension: 'js'
   }
@@ -58,7 +58,7 @@ const packages: any = {
 ```javascript
 // angular-cli-build.js
 // Note: This is only needed when we use angular-cli
- 
+
 var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
@@ -66,7 +66,7 @@ module.exports = function(defaults) {
     vendorNpmFiles: [
       ...
       // Add following lines (1/2)
-      'angular2-fontawesome/*.+(js|js.map)', 
+      'angular2-fontawesome/*.+(js|js.map)',
       'angular2-fontawesome/**/*.+(js|js.map)',
       'angular2-fontawesome/**/**/*.+(js|js.map)',
 
@@ -76,7 +76,7 @@ module.exports = function(defaults) {
     ]
 ```
 
-For more detail for working with angular-cli, [official wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs) would help. 
+For more detail for working with angular-cli, [official wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs) would help.
 
 *TODO* Modify directory structure to remove the lines in `angular-cli-build.js`.
 
