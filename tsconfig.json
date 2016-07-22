@@ -16,9 +16,8 @@
     "directives.d.ts"
   ],
   "files": [
-    "./src/components/fa.component.ts",
-    "./src/components/fa-stack.component.ts",
-    "./src/directives/fa.directive.ts",
-    "./typings/index.d.ts"
+    "typings/index.d.ts",
+    "components.d.ts",
+    "directives.d.ts"
   ]
 }
