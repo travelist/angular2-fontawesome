@@ -7,7 +7,7 @@ Angular2 components for Fontawesome
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": "~0.7.0"
+"angular2-fontawesome": "^0.5.0"
 ```
 
 We can import this library using SystemJS (`systemjs.config.js`):
@@ -16,48 +16,22 @@ We can import this library using SystemJS (`systemjs.config.js`):
 // This example is following to Angular2 Quick Start Documentation
 // Reference: https://angular.io/docs/ts/latest/quickstart.html
 
-(function (global) {
-  System.config({
-    paths: {
-      'npm:': 'node_modules/'
-    },
-    map: {
-      app: 'app',
+var map = {
+  'app':                        'app',
+  '@angular':                   'node_modules/@angular',
+  'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+  'rxjs':                       'node_modules/rxjs'
+  // Add this line (1/2)
+  'angular2-fontawesome':       'node_modules/angular2-fontawesome',
+};
 
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
-
-      'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-
-      // Add this line (1/2)
-      'angular2-fontawesome': 'node_modules/angular2-fontawesome',
-    },
-    packages: {
-      app: {
-        main: './main.js',
-        defaultExtension: 'js'
-      },
-      rxjs: {
-        defaultExtension: 'js'
-      },
-      'angular-in-memory-web-api': {
-        main: './index.js',
-        defaultExtension: 'js'
-      },
-
-      // Add this line (2/2)
-      'angular2-fontawesome': { defaultExtension: 'js' }
-    }
-  });
-})(this);
+var packages = {
+  'app':                        { main: 'main.js',  defaultExtension: 'js' },
+  'rxjs':                       { defaultExtension: 'js' },
+  'angular2-in-memory-web-api': { defaultExtension: 'js' },
+  // Add this line (2/2)
+  'angular2-fontawesome':       { defaultExtension: 'js' },
+};
 
 ```
 
@@ -83,7 +57,6 @@ const packages: any = {
 
 ```javascript
 // angular-cli-build.js
-// Note: This is not really tested!!! any comments are helpful
 // Note: This is only needed when we use angular-cli
 
 var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
@@ -114,22 +87,20 @@ For more detail for working with angular-cli, [official wiki page](https://githu
 
 1. Add [Fontawesome]((http://fortawesome.github.io/Font-Awesome/get-started/)) to your application.
 
-Note: *If there are some ways to include fontawesome icons to this module, will support for it.*
-
-2. In your highest module, import this module (Angular2 QuickStart for example):
+2. In the decorators, use `directives`  (Angular2 QuickStart for example):
 
 ```javascript
-// app/app.module.ts
+import { FaComponent } from 'angular2-fontawesome/components';
 
-// (1/2)
-import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
-
-@NgModule({
-  imports: [ BrowserModule, Angular2FontawesomeModule ], // (2/2)
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+@Component({
+  selector: 'my-app',
+  template: '<fa [name]="rocket" [border]=true></fa>',
+  // If this is based on angular-cli, replace node_module to vendor
+  // Not sure it works with Angular CLI actually..
+  styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
+  directives: [FaComponent],
 })
-export class AppModule { }
+export class AppComponent {}
 ```
 
 We can also use `FaDirective` if we want.
@@ -137,16 +108,12 @@ We can also use `FaDirective` if we want.
 ```javascript
 import { FaDirective } from 'angular2-fontawesome/directives';
 
-let sampleTemplate = `
-<fa [name]="rocket" [border]=true></i>
-<i fa [name]="rocket" [border]=true></i>
-`
-
 @Component({
   selector: 'my-app',
-  template: sampleTemplate,
+  template: '<i fa [name]="rocket" [border]=true></i>',
   // If this is based on angular-cli, replace node_module to vendor
   styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
+  directives: [FaDirective],
 })
 export class AppComponent {}
 ```
