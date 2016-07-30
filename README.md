@@ -96,6 +96,7 @@ import { FaComponent } from 'angular2-fontawesome/components';
   selector: 'my-app',
   template: '<fa [name]="rocket" [border]=true></fa>',
   // If this is based on angular-cli, replace node_module to vendor
+  // Not sure it works with Angular CLI actually..
   styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
   directives: [FaComponent],
 })
