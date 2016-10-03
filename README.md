@@ -7,7 +7,7 @@ Angular2 components for Fontawesome
 In `package.json`, insert a following line in the `dependencies`:
 
 ```
-"angular2-fontawesome": "^0.5.0"
+"angular2-fontawesome": "0.6.0"
 ```
 
 We can import this library using SystemJS (`systemjs.config.js`):
