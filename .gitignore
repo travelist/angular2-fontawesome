@@ -26,3 +26,16 @@ Desktop.ini
 
 # Mac
 .DS_Store
+
+# Angular2 Fontawesome
+angular2-fontawesome.js
+angular2-fontawesome.d.ts
+angular2-fontawesome.js.map
+
+/src/*.js
+/src/*.js.map
+/src/*.d.ts
+
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts

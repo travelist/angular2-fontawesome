@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
-    "outDir": "./lib",
-    "declaration": true
+    "noImplicitAny": true,
+    "declaration": false,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "removeComments": true,
+    "lib": ["dom", "es6"]
   },
-  "compileOnSave": true,
-  "filesGlob": [
-    "components.d.ts",
-    "directives.d.ts"
+  "exclude": [
+    "node_modules",
+    "demo"
   ],
+  "compileOnSave": true,
   "files": [
-    "./src/components/fa.component.ts",
-    "./src/components/fa-stack.component.ts",
-    "./src/directives/fa.directive.ts",
+    "./angular2-fontawesome.ts",
     "./typings/index.d.ts"
   ]
 }

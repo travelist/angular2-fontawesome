@@ -1,6 +1,6 @@
 {
   "name": "angular2-fontawesome",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Angular 2 Component/Directive for Fontawesome",
   "homepage": "https://github.com/travelist/angular2-fontawesome",
   "author": "Komei Shimamura <komei.t.f@gmail.com>",
@@ -28,8 +28,8 @@
     "url": "https://github.com/travelist/angular2-fontawesome/issues"
   },
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/core": "2.0.0",
+    "@angular/common": "~2.0.1",
+    "@angular/core": "~2.0.1",
     "rxjs": "5.0.0-beta.12",
     "font-awesome": "*"
   },

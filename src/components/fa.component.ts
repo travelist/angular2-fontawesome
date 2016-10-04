@@ -1,9 +1,15 @@
-import {Component, ElementRef, Input, SimpleChange} from '@angular/core';
-import {NgClass} from '@angular/common';
+import { Component } from '@angular/core';
+import { ElementRef } from '@angular/core';
+import { Input } from '@angular/core';
+import { SimpleChange } from '@angular/core';
+
+const FA_COMPONENT_TEMPLATE = `
+  <i [ngClass]="classList"></i>
+`
 
 @Component({
   selector: 'fa',
-  template: '<i [ngClass]="classList"></i>'
+  template: FA_COMPONENT_TEMPLATE
 
 })
 export class FaComponent {
