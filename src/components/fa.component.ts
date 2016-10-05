@@ -5,7 +5,7 @@ import { SimpleChange } from '@angular/core';
 
 const FA_COMPONENT_TEMPLATE = `
   <i [ngClass]="classList"></i>
-`
+`;
 
 @Component({
   selector: 'fa',
