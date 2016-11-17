@@ -1,12 +1,16 @@
 # Angular2 Fontawesome (Beta) [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
 Angular2 components for Fontawesome
 
+NOTE: For *angular-cli*, somehow I'm hitting errror to import module (1st step of [Usage](https://github.com/travelist/angular2-fontawesome#usage)). If someone have any solutions, please let me know.
 
 ## Installation
 
-In `package.json`, insert a following line in the `dependencies`:
+### [Angular2 QuickStart](https://angular.io/docs/ts/latest/quickstart.html)
+
+In `package.json`, insert following lines in the `dependencies` block:
 
 ```
+"font-awesome": "~4.7.0"  # Use any versions
 "angular2-fontawesome": "~0.7.0"
 ```
 
@@ -14,7 +18,6 @@ We can import this library using SystemJS (`systemjs.config.js`):
 
 ```javascript
 // This example is following to Angular2 Quick Start Documentation
-// Reference: https://angular.io/docs/ts/latest/quickstart.html
 
 (function (global) {
   System.config({
@@ -61,62 +64,30 @@ We can import this library using SystemJS (`systemjs.config.js`):
 
 ```
 
-If our application is build with [**angular-cli**](https://github.com/angular/angular-cli), the configuration is something like following:
+### [Angular CLI](https://github.com/angular/angular-cli)
 
-```javascript
-// src/system-config.ts
-// Note: This is only needed when we use angular-cli
+1. `../node_modules/font-awesome/css/font-awesome.css` to **style** block of *angular-cli.json*.
+2. `../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)` to **addons** block of *angular-cli.json*.
 
-const map: any = {
-  // Add this line (1/2)
-  'angular2-fontawesome': 'vendor/angular2-fontawesome'
-};
-
-/** User packages configuration. */
-const packages: any = {
-  // Add these lines (2/2)
-  'angular2-fontawesome':{
-    defaultExtension: 'js'
-  }
-};
+```json
+/* angular-cli.json  */
+{
+  "apps": [
+    {
+      "styles": [
+        "../node_modules/font-awesome/css/font-awesome.css"
+      ]
+    }
+  ],
+  "addons": [
+    "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
+  ]
+}
 ```
-
-```javascript
-// angular-cli-build.js
-// Note: This is not really tested!!! any comments are helpful
-// Note: This is only needed when we use angular-cli
-
-var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
-
-module.exports = function(defaults) {
-  return new Angular2App(defaults, {
-    vendorNpmFiles: [
-      ...
-      // Add following lines (1/2)
-      'angular2-fontawesome/*.+(js|js.map)',
-      'angular2-fontawesome/**/*.+(js|js.map)',
-      'angular2-fontawesome/**/**/*.+(js|js.map)',
-
-      // You need to add following lines as well (2/2)
-      'font-awesome/css/*.*',
-      'font-awesome/fonts/*.*'
-    ]
-```
-
-For more detail for working with angular-cli, [official wiki page](https://github.com/angular/angular-cli/wiki/3rd-party-libs) would help.
-
-*TODO* Modify directory structure to remove the lines in `angular-cli-build.js`.
-
-*TODO* Need to write webpack installation doc.
-
 
 ## Usage
 
-1. Add [Fontawesome]((http://fortawesome.github.io/Font-Awesome/get-started/)) to your application.
-
-Note: *If there are some ways to include fontawesome icons to this module, will support for it.*
-
-2. In your highest module, import this module (Angular2 QuickStart for example):
+2. In the decorators, use `directives`  (Angular2 QuickStart for example):
 
 ```javascript
 // app/app.module.ts
@@ -145,7 +116,7 @@ let sampleTemplate = `
 @Component({
   selector: 'my-app',
   template: sampleTemplate,
-  // If this is based on angular-cli, replace node_module to vendor
+  // we can skip styleUrls if we use angular-cli
   styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
 })
 export class AppComponent {}
