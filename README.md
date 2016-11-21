@@ -1,13 +1,11 @@
-# Angular2 Fontawesome (Beta) [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
+# Angular2 Fontawesome [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
 Angular2 components for Fontawesome
-
-NOTE: For *angular-cli*, somehow I'm hitting errror to import module (1st step of [Usage](https://github.com/travelist/angular2-fontawesome#usage)). If someone have any solutions, please let me know.
 
 ## Installation
 
 ```
 "font-awesome": "~4.7.0"  # Use any versions
-"angular2-fontawesome": "~0.7.0"
+"angular2-fontawesome": "~0.8.0"
 ```
 
 ### [Angular2 QuickStart](https://angular.io/docs/ts/latest/quickstart.html)
@@ -82,6 +80,50 @@ We can import this library using SystemJS (`systemjs.config.js`):
   "addons": [
     "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
   ]
+}
+```
+
+**NOTE**: If you don't have *angular-cli.json*, your configuration might be something like bellow:
+
+```javascript
+// src/system-config.ts
+// Note: This is only needed when we use angular-cli
+
+const map: any = {
+  // Add this line (1/2)
+  'angular2-fontawesome': 'vendor/angular2-fontawesome'
+};
+
+/** User packages configuration. */
+const packages: any = {
+  // Add these lines (2/2)
+  'angular2-fontawesome':{
+    defaultExtension: 'js'
+  }
+};
+```
+
+```javascript
+// angular-cli-build.js
+// Note: This is not really tested!!! any comments are helpful
+// Note: This is only needed when we use angular-cli
+
+var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
+
+module.exports = function(defaults) {
+  return new Angular2App(defaults, {
+    vendorNpmFiles: [
+      ...
+      // Add following lines (1/2)
+      'angular2-fontawesome/*.+(js|js.map)',
+      'angular2-fontawesome/**/*.+(js|js.map)',
+      'angular2-fontawesome/**/**/*.+(js|js.map)',
+
+      // You need to add following lines as well (2/2)
+      'font-awesome/css/*.*',
+      'font-awesome/fonts/*.*'
+    ]
+  }
 }
 ```
 
