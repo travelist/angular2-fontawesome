@@ -83,11 +83,10 @@ We can import this library using SystemJS (`systemjs.config.js`):
 }
 ```
 
-**NOTE**: If you don't have *angular-cli.json*, your configuration might be something like bellow:
+**NOTE**: If you don't have *angular-cli.json*, your configuration would be something like bellow:
 
 ```javascript
 // src/system-config.ts
-// Note: This is only needed when we use angular-cli
 
 const map: any = {
   // Add this line (1/2)
@@ -105,8 +104,6 @@ const packages: any = {
 
 ```javascript
 // angular-cli-build.js
-// Note: This is not really tested!!! any comments are helpful
-// Note: This is only needed when we use angular-cli
 
 var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
@@ -129,8 +126,6 @@ module.exports = function(defaults) {
 
 ## Usage
 
-2. In the decorators, use `directives`  (Angular2 QuickStart for example):
-
 ```javascript
 // app/app.module.ts
 
@@ -148,7 +143,6 @@ export class AppModule { }
 We can also use `FaDirective` if we want.
 
 ```javascript
-import { FaDirective } from 'angular2-fontawesome/directives';
 
 let sampleTemplate = `
 <fa [name]="rocket" [border]=true></i>
@@ -157,14 +151,10 @@ let sampleTemplate = `
 
 @Component({
   selector: 'my-app',
-  template: sampleTemplate,
-  // we can skip styleUrls if we use angular-cli
-  styleUrls: ['node_modules/font-awesome/css/font-awesome.css'],
+  template: sampleTemplate
 })
 export class AppComponent {}
 ```
-
-*Note* **FaStackDirective** is going to be supported
 
 ## Parameters
 
