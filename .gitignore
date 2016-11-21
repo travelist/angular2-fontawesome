@@ -39,3 +39,11 @@ angular2-fontawesome.js.map
 src/**/*.js
 src/**/*.js.map
 src/**/*.d.ts
+
+/bundles
+
+factories
+
+/**/*.metadata.json
+/*.metadata.json
+

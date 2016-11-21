@@ -2,12 +2,6 @@
 node_modules/*
 npm-debug.log
 
-# DO NOT IGNORE TYPESCRIPT FILES FOR NPM
-# TypeScript
-# *.js
-# *.map
-# *.d.ts
-
 # JetBrains
 .idea
 .project
@@ -23,4 +17,29 @@ Desktop.ini
 .DS_Store
 **/.DS_Store
 
+# typings
+typings
+
+# development
+.config
+.editorconfig
+.eslintrc.json
+.ng2-config.js
+.npmignore
+circle.yml
+tsconfig.json
+tsconfig.publish.json
+tslint.json
 demo
+
+
+#typescript sources
+*.ts
+*.js.map
+!/bundles/*.js.map
+!*.d.ts
+!*.metadata.json
+/src/*.ts
+!/src/*.d.ts
+
+factories
