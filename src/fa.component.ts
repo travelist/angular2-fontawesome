@@ -3,9 +3,13 @@ import { ElementRef } from '@angular/core';
 import { Input } from '@angular/core';
 import { SimpleChange } from '@angular/core';
 
+const FA_COMPONENT_TEMPLATE = `
+  <i [ngClass]="classList"></i>
+`;
+
 @Component({
   selector: 'fa',
-  templateUrl: './fa.component.html'
+  template: FA_COMPONENT_TEMPLATE
 })
 export class FaComponent {
   static sizeValidator:   RegExp = /[1-5]/;

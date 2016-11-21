@@ -5,14 +5,14 @@ NOTE: For *angular-cli*, somehow I'm hitting errror to import module (1st step o
 
 ## Installation
 
-### [Angular2 QuickStart](https://angular.io/docs/ts/latest/quickstart.html)
-
-In `package.json`, insert following lines in the `dependencies` block:
-
 ```
 "font-awesome": "~4.7.0"  # Use any versions
 "angular2-fontawesome": "~0.7.0"
 ```
+
+### [Angular2 QuickStart](https://angular.io/docs/ts/latest/quickstart.html)
+
+In `package.json`, insert following lines in the `dependencies` block:
 
 We can import this library using SystemJS (`systemjs.config.js`):
 
