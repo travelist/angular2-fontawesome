@@ -193,7 +193,7 @@ export class AppComponent {}
   <i class="fa fa-rocket"></i>
 </fa>
 
-<i fa [name]="rocket"></fa>
+<i fa [name]="rocket"></i>
 <!-- rendered -->
 <i fa class="fa fa-rocket"></i>
 ```
