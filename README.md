@@ -5,7 +5,7 @@ Angular2 components for Fontawesome
 
 ```
 "font-awesome": "~4.7.0"  # Use any versions
-"angular2-fontawesome": "~0.8.0"
+"angular2-fontawesome": "~0.9.0"
 ```
 
 ### [Angular2 QuickStart](https://angular.io/docs/ts/latest/quickstart.html)
