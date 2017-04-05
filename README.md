@@ -145,7 +145,7 @@ We can also use `FaDirective` if we want.
 ```javascript
 
 let sampleTemplate = `
-<fa [name]="rocket" [border]=true></i>
+<fa [name]="rocket" [border]=true></fa>
 <i fa [name]="rocket" [border]=true></i>
 `
 
