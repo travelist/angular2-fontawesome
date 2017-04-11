@@ -10,17 +10,17 @@ export class FaDirective {
   static pullValidator:RegExp = /['right'|'left']/;
   static rotateValidator:RegExp = /[90|180|270]/;
 
-  private name:string; // fa-'name'
-  private alt:string; // Currently not supported yet
-  private size:number; // [1-5] fa-[lg|2-5]x
-  private stack:number; // [1-5] fa-stack-[lg|2-5]x
-  private flip:string; // [horizontal|vertical] fa-flip-[horizontal|vertical]
-  private pull:string; // [right|left] fa-pull-[right|left]
-  private rotate:number; // [90|180|270] fa-rotate-[90|180|270]
-  private border:boolean; // true fa-border
-  private spin:boolean; // true fa-spin
-  private fw:boolean; // true fa-fw
-  private inverse:boolean; // true fa-inverse
+  public name:string; // fa-'name'
+  public alt:string; // Currently not supported yet
+  public size:number; // [1-5] fa-[lg|2-5]x
+  public stack:number; // [1-5] fa-stack-[lg|2-5]x
+  public flip:string; // [horizontal|vertical] fa-flip-[horizontal|vertical]
+  public pull:string; // [right|left] fa-pull-[right|left]
+  public rotate:number; // [90|180|270] fa-rotate-[90|180|270]
+  public border:boolean; // true fa-border
+  public spin:boolean; // true fa-spin
+  public fw:boolean; // true fa-fw
+  public inverse:boolean; // true fa-inverse
 
   private el:HTMLElement;
 
