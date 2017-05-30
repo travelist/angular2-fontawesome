@@ -8,7 +8,7 @@ import { FaComponent } from './fa.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [FaDirective, FaComponent],
-    exports: [FaDirective, FaComponent]
+    exports: [FaDirective, FaComponent],
 })
 export class Angular2FontawesomeModule {
 }
