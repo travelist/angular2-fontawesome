@@ -65,10 +65,12 @@ We can import this library using SystemJS (`systemjs.config.js`):
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
 1. `../node_modules/font-awesome/css/font-awesome.css` to **style** block of *angular-cli.json*.
-2. `../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)` to **addons** block of *angular-cli.json*.
 
-```json
-/* angular-cli.json  */
+> 2. `../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)` to **addons** block of *angular-cli.json*.
+> For `@angular/cli(>=1.2.6)` we no longer need to add `addons` chapter.
+
+```
+/* angular-cli.json */
 {
   "apps": [
     {
@@ -77,52 +79,58 @@ We can import this library using SystemJS (`systemjs.config.js`):
       ]
     }
   ],
+
+  // Do not need to add this (@angular/cli(>=1.2.6))
   "addons": [
     "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
   ]
+
 }
 ```
 
-**NOTE**: If you don't have *angular-cli.json*, your configuration would be something like bellow:
-
-```javascript
-// src/system-config.ts
-
-const map: any = {
-  // Add this line (1/2)
-  'angular2-fontawesome': 'vendor/angular2-fontawesome'
-};
-
-/** User packages configuration. */
-const packages: any = {
-  // Add these lines (2/2)
-  'angular2-fontawesome':{
-    defaultExtension: 'js'
-  }
-};
-```
-
-```javascript
-// angular-cli-build.js
-
-var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
-
-module.exports = function(defaults) {
-  return new Angular2App(defaults, {
-    vendorNpmFiles: [
-      ...
-      // Add following lines (1/2)
-      'angular2-fontawesome/*.+(js|js.map)',
-      'angular2-fontawesome/**/*.+(js|js.map)',
-      'angular2-fontawesome/**/**/*.+(js|js.map)',
-
-      // You need to add following lines as well (2/2)
-      'font-awesome/css/*.*',
-      'font-awesome/fonts/*.*'
-    ]
-  }
-}
-```
+> **NOTE**: If you don't have *angular-cli.json* (this means it's bit old `angular-cli`), 
+> your configuration would be something like bellow:
+>
+> ```javascript
+> // src/system-config.ts
+> 
+> const map: any = {
+>   // Add this line (1/2)
+>   'angular2-fontawesome': 'vendor/angular2-fontawesome'
+> };
+> 
+> /** User packages configuration. */
+> const packages: any = {
+>   // Add these lines (2/2)
+>   'angular2-fontawesome':{
+>     defaultExtension: 'js'
+>   }
+> };
+> ```
+> 
+>
+> ```javascript
+> // angular-cli-build.js
+> 
+> var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
+> 
+> module.exports = function(defaults) {
+>   return new Angular2App(defaults, {
+>     vendorNpmFiles: [
+>       ...
+>       // Add following lines (1/2)
+>       'angular2-fontawesome/*.+(js|js.map)',
+>       'angular2-fontawesome/**/*.+(js|js.map)',
+>       'angular2-fontawesome/**/**/*.+(js|js.map)',
+> 
+>       // You need to add following lines as well (2/2)
+>       'font-awesome/css/*.*',
+>       'font-awesome/fonts/*.*'
+>     ]
+>   }
+> }
+> ```
+> 
 
 ## Usage
 
@@ -145,8 +153,8 @@ We can also use `FaDirective` if we want.
 ```javascript
 
 let sampleTemplate = `
-<fa [name]="rocket" [border]=true></fa>
-<i fa [name]="rocket" [border]=true></i>
+<fa [name]="'rocket'" [border]=true></fa>
+<i fa [name]="'rocket'" [border]=true></i>
 `
 
 @Component({
@@ -193,7 +201,7 @@ export class AppComponent {}
   <i class="fa fa-rocket"></i>
 </fa>
 
-<i fa [name]="rocket"></i>
+<i fa [name]="'rocket'"></i>
 <!-- rendered -->
 <i fa class="fa fa-rocket"></i>
 ```
@@ -207,7 +215,7 @@ export class AppComponent {}
   <i class="fa fa-rocket fa-lg"></i>
 </fa>
 
-<i fa [name]="rocket" [size]=1></i>
+<i fa [name]="'rocket'" [size]=1></i>
 <!-- rendered -->
 <i fa class="fa fa-rocket fa-lg"></i>
 ```
@@ -221,7 +229,7 @@ export class AppComponent {}
   <i class="fa fa-rocket fa-flip-horizontal"></i>
 </fa>
 
-<i fa [name]="rocket" [flip]="'horizontal'"></i>
+<i fa [name]="'rocket'" [flip]="'horizontal'"></i>
 <!-- rendered -->
 <i fa class="fa fa-rocket fa-flip-horizontal"></i>
 ```
@@ -235,7 +243,7 @@ export class AppComponent {}
   <i class="fa fa-rocket fa-pull-right"></i>
 </fa>
 
-<i fa [name]="rocket" [pull]="'right'"></i>
+<i fa [name]="'rocket'" [pull]="'right'"></i>
 <!-- rendered -->
 <i class="fa fa-rocket fa-pull-right"></i>
 ```
