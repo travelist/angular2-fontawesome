@@ -3,7 +3,12 @@ Angular2 components for Fontawesome
 
 ## Installation
 
+```shell
+npm install --save font-awesome angular2-fontawesome
 ```
+
+```
+/* package.json */
 "font-awesome": "~4.7.0"  # Use any versions
 "angular2-fontawesome": "~0.9.0"
 ```
