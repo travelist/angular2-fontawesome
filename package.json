@@ -1,13 +1,14 @@
 {
   "name": "angular2-fontawesome",
-  "version": "0.9.3",
-  "description": "Angular 2 Component/Directive for Fontawesome",
+  "version": "5.2.0",
+  "description": "Angular 5 Component/Directive for Fontawesome",
   "homepage": "https://github.com/travelist/angular2-fontawesome",
   "author": "Komei Shimamura <komei.t.f@gmail.com>",
   "license": "MIT",
   "keywords": [
     "angular",
     "angular2",
+    "angular5",
     "fontawesome",
     "typescript"
   ],
@@ -29,10 +30,6 @@
   },
   "bugs": {
     "url": "https://github.com/travelist/angular2-fontawesome/issues"
-  },
-  "peerDependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/core": "^4.0.0"
   },
   "dependencies": {},
   "devDependencies": {
