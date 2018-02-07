@@ -1,6 +1,8 @@
 # Angular5 Fontawesome [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
 Angular5 components for Fontawesome
 
+[Live Demo](https://angular-fontawesome.netlify.com/)
+
 ## Installation
 
 ```shell
