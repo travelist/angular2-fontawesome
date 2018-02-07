@@ -10,7 +10,7 @@ npm install --save font-awesome angular2-fontawesome
 ```
 /* package.json */
 "font-awesome": "~4.7.0"  # Use any versions
-"angular2-fontawesome": "~0.9.0"
+"angular2-fontawesome": "~5.2.0"
 ```
 
 ### Angular CLI
