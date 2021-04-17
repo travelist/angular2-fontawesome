@@ -1,5 +1,8 @@
-# Angular5 Fontawesome [![Circle CI](https://circleci.com/gh/travelist/angular2-fontawesome.svg?style=svg&circle-token=b67cb26ecb809e7ba182ac4d2e222707a34ddddd)](https://circleci.com/gh/travelist/angular2-fontawesome)
-Angular5 components for Fontawesome
+# NOT MAINTAINED 
+
+_This library is no longer maintained and I'd like to ask you to consider using other libraries such as https://github.com/FortAwesome/angular-fontawesome._
+
+# Angular5 Fontawesome
 
 ## Installation
 
