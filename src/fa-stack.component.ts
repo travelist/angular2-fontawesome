@@ -19,7 +19,7 @@ export class FaStackComponent {
       if (key === 'size')
         var previousValue = changes[key].previousValue;
         var currentValue  = changes[key].currentValue;
-        if ([1, 2, 3, 4, 5].indexOf(currentValue) >= 0) {
+        if (Number.isInteger(currentValue) && currentValue >= 1 && currentValue <= 5) {
           if (previousValue === 1) {
             this.removeFaClass('fa-lg');
           } else {
